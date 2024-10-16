@@ -2,7 +2,10 @@ package by.lravenclaw.quizer.generators.math;
 
 import by.lravenclaw.quizer.generators.TaskGenerator;
 
-public interface MathTaskGenerator extends TaskGenerator {
+import by.lravenclaw.quizer.tasks.math.*;
+import by.lravenclaw.quizer.tasks.*;
+
+public interface MathTaskGenerator<T extends MathTask> extends TaskGenerator {
     int getMinNumber(); // получить минимальное число
     int getMaxNumber(); // получить максимальное число
 
