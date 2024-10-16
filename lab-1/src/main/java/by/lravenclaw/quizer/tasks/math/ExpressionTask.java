@@ -1,9 +1,8 @@
 package by.lravenclaw.quizer.tasks.math;
 
-import by.lravenclaw.quizer.tasks.Result;
 import by.lravenclaw.quizer.exceptions.IllegalOperationException;
 
-public class ExpressionMathTask<T extends Number> extends AbstractMathTask<T> implements MathTask<T> {
+public class ExpressionTask<T extends Number> extends AbstractMathTask<T> implements MathTask<T> {
     /**
      *  Описывает уравнения типа:
      *  <num1><operator><num2>=<answer>
@@ -12,10 +11,13 @@ public class ExpressionMathTask<T extends Number> extends AbstractMathTask<T> im
     T num1, num2;
     Operation operator;
 
-    public ExpressionMathTask(T num1, Operation op, T num2) {
+    public ExpressionTask(T num1, Operation op, T num2) {
         this.num1 = num1;
         this.operator = op;
         this.num2 = num2;
+
+        text = num1.toString() + operations_to_str.get(op) +
+                num2.toString() + "=?";
     }
 
     @Override

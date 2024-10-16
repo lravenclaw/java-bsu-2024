@@ -24,7 +24,7 @@ abstract public class AbstractMathTask<T extends Number> extends AbstractTask im
         operations_to_str.put(Operation.MULTIPLY, "*");
     }
 
-    public Operation getOppositeOperation(Operation op) {
+    protected Operation getOppositeOperation(Operation op) {
         switch (op) {
             case Operation.SUM:
                 return Operation.SUBTRACT;
@@ -43,7 +43,7 @@ abstract public class AbstractMathTask<T extends Number> extends AbstractTask im
         }
     }
 
-    public double calculateExpression(double a, Operation op, double b) throws IllegalOperationException {
+    protected double calculateExpression(double a, Operation op, double b) throws IllegalOperationException {
         if (op == Operation.DIVIDE && b == 0.) {
             throw new IllegalOperationException("Division by zero!");
         }
