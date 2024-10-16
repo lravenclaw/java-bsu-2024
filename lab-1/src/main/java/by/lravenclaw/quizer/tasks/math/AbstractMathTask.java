@@ -15,13 +15,13 @@ abstract public class AbstractMathTask<T extends Number> extends AbstractTask im
         MULTIPLY
     }
 
-    public Map<Operation, String> operations_to_str = new EnumMap<>(Operation.class);
+    public Map<Operation, String> operationsToStr = new EnumMap<>(Operation.class);
 
     AbstractMathTask(){
-        operations_to_str.put(Operation.SUM, "+");
-        operations_to_str.put(Operation.SUBTRACT, "-");
-        operations_to_str.put(Operation.DIVIDE, "/");
-        operations_to_str.put(Operation.MULTIPLY, "*");
+        operationsToStr.put(Operation.SUM, "+");
+        operationsToStr.put(Operation.SUBTRACT, "-");
+        operationsToStr.put(Operation.DIVIDE, "/");
+        operationsToStr.put(Operation.MULTIPLY, "*");
     }
 
     protected Operation getOppositeOperation(Operation op) {

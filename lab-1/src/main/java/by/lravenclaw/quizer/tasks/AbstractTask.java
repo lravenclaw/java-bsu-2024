@@ -2,8 +2,8 @@ package by.lravenclaw.quizer.tasks;
 
 import lombok.*;
 
-@Getter
 abstract public class AbstractTask implements Task {
+    @Getter(AccessLevel.PUBLIC)
     protected String text;
 
     /**

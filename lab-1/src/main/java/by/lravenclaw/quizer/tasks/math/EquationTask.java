@@ -22,7 +22,7 @@ public class EquationTask<T extends Number> extends AbstractMathTask<T> implemen
         this.num2 = num2;
         this.answer = answer;
 
-        text = "x" + operations_to_str.get(operator2) +
+        text = "x" + operationsToStr.get(operator2) +
                 num2.toString() + "=" + answer.toString();
     }
 
@@ -37,7 +37,7 @@ public class EquationTask<T extends Number> extends AbstractMathTask<T> implemen
         this.operator1 = operator1;
         this.answer = answer;
 
-        text = num1.toString() + operations_to_str.get(operator1) +
+        text = num1.toString() + operationsToStr.get(operator1) +
                 "x=" + answer.toString();
     }
 

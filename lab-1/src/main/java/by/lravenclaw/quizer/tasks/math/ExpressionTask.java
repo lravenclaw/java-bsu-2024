@@ -16,7 +16,7 @@ public class ExpressionTask<T extends Number> extends AbstractMathTask<T> implem
         this.operator = op;
         this.num2 = num2;
 
-        text = num1.toString() + operations_to_str.get(op) +
+        text = num1.toString() + operationsToStr.get(op) +
                 num2.toString() + "=?";
     }
 
