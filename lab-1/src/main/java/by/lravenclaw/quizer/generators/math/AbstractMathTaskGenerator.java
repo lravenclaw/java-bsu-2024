@@ -1,14 +1,14 @@
 package by.lravenclaw.quizer.generators.math;
 
-import by.lravenclaw.quizer.tasks.Task;
 import by.lravenclaw.quizer.tasks.math.AbstractMathTask.Operation;
+import by.lravenclaw.quizer.tasks.math.MathTask;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.Random;
+import java.util.*;
 import lombok.*;
 
-public abstract class AbstractMathTaskGenerator implements MathTaskGenerator {
+abstract public class AbstractMathTaskGenerator
+        <NumType extends Number, TaskType extends MathTask<NumType>>
+        implements MathTaskGenerator<NumType, TaskType> {
     @Getter(AccessLevel.PUBLIC)
     protected int minNumber;
 
@@ -33,12 +33,7 @@ public abstract class AbstractMathTaskGenerator implements MathTaskGenerator {
         this.operations.addAll(operations);
 
         if (minNumber > maxNumber) {
-            int tmp = minNumber;
-            minNumber = maxNumber;
-            maxNumber = tmp;
+            throw new IllegalArgumentException("Max number should be less then min.");
         }
     }
-
-    @Override
-    Task generate();
 }

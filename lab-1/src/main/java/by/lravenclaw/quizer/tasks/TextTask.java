@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
  */
 
 @AllArgsConstructor
-class TextTask extends AbstractTask implements Task {
+public class TextTask extends AbstractTask implements Task {
     String answer;
 
     @Override
